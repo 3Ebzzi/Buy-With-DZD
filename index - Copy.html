@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> حساب السعر بالدينار الجزائري </title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body background="images/Capture%20d%C3%A2__%C3%83%C2%A9cran%202023-02-14%20135904.png">
+<style>
+    body{
+        background-size:cover ;
+    }
+</style>
+ 
+<form action method="get">
+<h2>حساب السعر بالدينار الجزائري </h2>
+<h2> ملاحظة مهمة : يلزم أن يكون السعر المدخل بالاورو </h2>
+<div class="age" id="age"></div>
+
+<div class="block">
+    <p class="title"> سعر المنتج </p>
+    <input type="text" id="المنتج" placeholder="المنتج" required autofocus>
+</div>
+
+<div class="block">
+    <p class="title"> الشحن </p>
+    <input type="text" id="الشحن" required placeholder="الشحن">
+</div>
+
+
+<button type="button" onclick="age()"> اضغط هنا </button>
+</form>
+
+
+<script>
+    function age(){
+        let day = document.getElementById('المنتج').value;
+        let month = document.getElementById('الشحن').value;
+        a = day*1+month*1 ;
+
+        if( a>0  ){
+        if( a < 3.99 ){
+            get_day = a *230+ 300;
+        }
+        else if( a < 5.99 ){
+            get_day = a *230+ 350;
+        }else if( a < 6.99 ){
+            get_day = a *230+ 400;
+        } else if( a < 7.99 ){
+            get_day = a *230+450 ;
+        } else if( a < 11.99 ){
+            get_day = a *230+500 ;
+        } else if( a < 21.99 ){
+            get_day = a *230+500 ;
+        } else if( a < 25.99 ){
+            get_day = a *230+600 ;
+        } else if( a < 29.99 ){
+            get_day = a *230+700 ;
+        } else if( a < 33.99 ){
+            get_day = a *230+800 ;
+        } else if( a < 38.99 ){
+            get_day = a *230+900 ;
+        } else if( a < 43.46 ){
+            get_day = a *230+1000 ;
+        } else if( a < 65.50 ){
+            get_day = a *230+1100 ;
+        } else if( a < 69.99 ){
+            get_day = a *230+1200 ;
+        } else if( a < 73.90 ){
+            get_day = a *230+1300 ;
+        } else if( a < 78.25 ){
+            get_day = a *230+1400 ;
+        } else if( a < 82.59 ){
+            get_day = a *230+1500 ;
+        } else if( a < 86.94 ){
+            get_day = a *230+1550 ;
+        } else if( a < 91.19 ){
+            get_day = a *230+1600 ;
+        } else if( a < 95.50 ){
+            get_day = a *230+1700 ;
+        } else if( a < 99.99 ){
+            get_day = a *230+1800 ;
+        } else if( a < 104.20 ){
+            get_day = a *230+1900 ;
+        } else if( a < 130.42 ){
+            get_day = a *230+2000 ;
+        } else if( a < 152.16 ){
+            get_day = a *230+2100 ;
+        } else if( a < 156.51 ){
+            get_day = a *230+2200 ;
+        } else if( a < 160.85 ){
+            get_day = a *230+2300 ;
+        } else if( a < 165.20 ){
+            get_day = a *230+2400 ;
+        } else if( a < 169.55 ){
+            get_day = a *230+2500 ;
+        } else if( a < 173.90 ){
+            get_day = a *230+2600 ;
+        } else if( a < 178.25 ){
+            get_day = a *230+2700 ;
+        } else if( a < 186.88 ){
+            get_day = a *230+2800 ;
+        } else if( a < 182.59 ){
+            get_day = a *230+2900 ;
+        } else if( a < 186.94 ){
+            get_day = a *230+3000 ;
+        } else if( a < 191.29 ){
+            get_day = a *230+3600 ;
+        } else if( a < 195.64 ){
+            get_day = a *230+3700 ;
+        } else if( a < 199.99 ){
+            get_day = a *230+3800 ;
+        } else if( a < 204.33 ){
+            get_day = a *230+3900 ;
+        } else if( a < 208.99 ){
+            get_day = a *230+3900 ;
+        } else if( a < 213.02 ){
+            get_day = a *230+3900 ;
+        } else if( a >= 217.30 ){
+            z = a/100 ;
+            get_day = a *230+ z*1400 ;
+        } mod = get_day%50 ;
+        if (mod != 0){
+            get_day = get_day + 50 - mod ;
+        } 
+        }
+
+        
+        let d =  get_day;
+      
+       
+        document.getElementById('age').innerHTML = 'سعر المنتج باحتساب كافة تكاليف هو :  '+d+
+        ' دج';
+
+
+    }
+</script>
+
+
+
+
+
+
+
+
+
+</body></html>
